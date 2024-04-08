@@ -73,9 +73,12 @@
         </select>
     </div>
 
+    <button id="submit">Submit</button>
+
     <script>
         const experience = document.getElementById('experienceLevel');
         const projectType = document.getElementById('projectType');
+        const submitButton = document.getElementById('submit');
 
         experience.addEventListener('change', function() {
             const selectedExperience = experience.value;
@@ -86,6 +89,14 @@
         projectType.addEventListener('change', function() {
             const selectedProjectType = projectType.value;
             console.log(`Selected project type: ${selectedProjectType}`);
+        })
+
+        submitButton.addEventListener('click', function() {
+            const parameters ={
+                experience: experience.value,
+                type: projectType.value
+            }
+            console.log(paramters);
         })
     </script>
 </body>
