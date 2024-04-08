@@ -37,6 +37,13 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
+
+        button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 25%;
+        }
     </style>
 </head>
 <body>
@@ -82,13 +89,10 @@
 
         experience.addEventListener('change', function() {
             const selectedExperience = experience.value;
-            console.log(`Selected experince: ${selectedExperience}`);
-            // You can add additional logic here to handle the selected value
         });
 
         projectType.addEventListener('change', function() {
             const selectedProjectType = projectType.value;
-            console.log(`Selected project type: ${selectedProjectType}`);
         })
 
         submitButton.addEventListener('click', function() {
