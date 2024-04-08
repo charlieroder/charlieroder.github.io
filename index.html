@@ -1,3 +1,52 @@
-<button>
-    Generate
-</button>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Options</title>
+</head>
+<body>
+    <h1>Select a Value:</h1>
+
+    <select id="experienceLevel">
+        <option value="">-- Select an option --</option>
+        <option value="none">No coding experience</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate 3</option>
+        <option value="expert">Expert</option>
+    </select>
+
+    <select id="projectType">
+        <option value="">-- Select an option --</option>
+        <option value="media">Media</option>
+        <option value="education">Education Technology</option>
+        <option value="ecommerce">E-commerce</option>
+        <option value="search_engine">Search Engine</option>
+        <option value="productivity_tools">Productivity Tools</option>
+        <option value="delivery_rideshare">Delivery / Rideshare</option>
+        <option value="financial_services">Financial Services / Banking</option>
+        <option value="web_development">Web Development</option>
+        <option value="gaming">Gaming</option>
+        <option value="management">Management Tools</option>
+        <option value="tech_services">Technology Services</option>
+        <option value="web_development">Web Development</option>
+        <option value="marketing">Advertising / Marketing</option>
+        <option value="travel">Travel</option>
+    </select>
+
+    <script>
+        const experience = document.getElementById('experienceLevel');
+        const projectType = document.getElementById('projectType');
+
+        experience.addEventListener('change', function() {
+            const selectedExperience = experience.value;
+            console.log(`Selected experince: ${selectedExperience}`);
+            // You can add additional logic here to handle the selected value
+        });
+
+        projectType.addEventListener('change', function() {
+            const selectedProjectType = projectType.value;
+            console.log(`Selected project type: ${selectedProjectType}`);
+            
+        })
+    </script>
+</body>
+</html>

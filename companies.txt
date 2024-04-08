@@ -1,0 +1,137 @@
+Media:
+    Reddit
+    Twitter
+    SoundCloud
+    BleacherReport
+    TheGuardian
+    Pandora
+    Twitch
+    iQiyi
+    Discord
+    Slack
+    LinkedIn
+    Pinterest
+    Digg
+    Sky
+    HashNode
+    Centrifugo
+Education Technology:
+    TekPub
+    Instill
+    PresidentUniversity
+    Yuanfudao
+    GoGuardian
+E-commerce:
+    Etsy
+    Zalora
+    Olery
+    Tokopedia
+    more
+    Myntra
+    Bukalapak
+    Meituan
+    Yiguo
+    Fanatics
+    Amazon
+Search Engine:
+    Bing
+    DLGoogle
+    Blippex
+    Baidu
+Productivity Tools:
+    Toggl
+    Manage
+    monday.com
+    diwo
+Delivery / Rideshare:
+    Deliveroo
+    Grab
+    Uber
+    Mobike
+    Wag
+Financial Services / Banking:
+    Bloomberg
+    PayPal
+    CashApp
+    Paytm
+    CitizensBank
+    2FintechGiants
+    KurtoSys
+    Areeba
+Web Development:
+    MoovWeb
+    Boxzilla
+    GeekyAnts
+    GitHub
+    AppTree
+    Codism
+Gaming:
+    Poki
+    NetEaseGames
+Management Technology:
+    Mixpanel
+    TargeterApp
+    BlueShift
+    AppsFlyer
+    Movio
+    ContentSquare
+    Insider
+    GumGum
+    Swat.io
+    Narvar
+    Medaxion
+Technology Services:
+    Koding
+    Iron.io
+    CanonicalJuju
+    Parse
+    TreeScale
+    JDCloud
+    UrbanAirship
+    NTPPool
+    Bitly
+    Shareaholic
+    DigiDoc
+    UserLike
+    CrowdStrike
+    DockYard
+    Sentry
+    Kairos
+    UpGuard
+    Stream
+    PlumeDesignsInc
+Advertising / Marketing:
+    Google AdWords
+    GumGum
+    Insider
+    PixelJets
+    SendGrid
+Other:
+    AFortune50Company
+Travel:
+    Amadeus
+    Trivago
+    Marriot
+
+
+
+
+
+
+Insite360
+
+
+
+SkyElectric
+
+
+
+
+
+
+
+
+    TimeHop
+    Workia
+    TrustWave
+    Chat
