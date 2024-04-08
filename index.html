@@ -4,16 +4,18 @@
     <title>Project Options</title>
 </head>
 <body>
-    <h1>Select a Value:</h1>
+    <h1>Select Project Parameters</h1>
 
+    <h3>Experience Level</h3>
     <select id="experienceLevel">
         <option value="">-- Select an option --</option>
         <option value="none">No coding experience</option>
         <option value="beginner">Beginner</option>
-        <option value="intermediate">Intermediate 3</option>
+        <option value="intermediate">Intermediate</option>
         <option value="expert">Expert</option>
     </select>
 
+    <h3>Project Type</h3>
     <select id="projectType">
         <option value="">-- Select an option --</option>
         <option value="media">Media</option>
@@ -30,6 +32,7 @@
         <option value="web_development">Web Development</option>
         <option value="marketing">Advertising / Marketing</option>
         <option value="travel">Travel</option>
+        <option value="other">Other</option>
     </select>
 
     <script>
@@ -45,7 +48,7 @@
         projectType.addEventListener('change', function() {
             const selectedProjectType = projectType.value;
             console.log(`Selected project type: ${selectedProjectType}`);
-            
+
         })
     </script>
 </body>
