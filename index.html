@@ -110,7 +110,7 @@
         })
 
         document.getElementById('run_model').addEventListener('click', function() {
-            fetch('/run_script', {
+            fetch('/run_model', {
                 method: 'POST',
                 body: new URLSearchParams({ 'input_data': {"experience": experience, "project_type": projectType} }),
                 headers: {
