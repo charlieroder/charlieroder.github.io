@@ -46,9 +46,6 @@
             width: 25%;
         }
 
-        button:hover {
-            border: 2px solid green;
-        }
     </style>
 </head>
 <body>
@@ -85,7 +82,11 @@
         </select>
 
         <button id="submit">Submit</button>
+
+        <button id="run_model">Run Model</button>
     </div>
+
+    <div id="output"></div>
 
     <script>
         const experience = document.getElementById('experienceLevel');
@@ -107,6 +108,20 @@
             }
             console.log(parameters);
         })
+
+        document.getElementById('run_model').addEventListener('click', function() {
+            fetch('/run_script', {
+                method: 'POST',
+                body: new URLSearchParams({ 'input_data': {"experience": experience, "project_type": projectType} }),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('output').innerHTML = data;
+            });
+        });
     </script>
 </body>
 </html>
