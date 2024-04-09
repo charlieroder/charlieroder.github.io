@@ -1,19 +1,19 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/run-python', methods=['POST'])
+def run_python_script():
+    input_data = request.json['input']
+    
+    # Process input_data and execute your Python script here
 
-@app.route('/run_model', methods=['POST'])
-def run_model():
-    input_data = request.form['input_data']
-    # Pass the input data to your Python script for processing
-    # Replace the following line with your actual script execution logic
-    result = f"Python script executed successfully with input: {input_data}"
-    return result
+    # For demonstration, let's just return the input data reversed
+    output_data = input_data[::-1]
+
+    return jsonify({'output': output_data})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)  # Remove debug=True in production
+
 

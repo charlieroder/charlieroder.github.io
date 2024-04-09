@@ -83,7 +83,7 @@
 
         <button id="submit">Submit</button>
 
-        <button id="run_model">Run Model</button>
+        <button id="run_model" onClick="runPython()">Run Model</button>
     </div>
 
     <div id="output"></div>
@@ -109,19 +109,22 @@
             console.log(parameters);
         })
 
-        document.getElementById('run_model').addEventListener('click', function() {
-            fetch('/run_model', {
+        function runPython() {
+            var inputData = document.getElementById("experienceLevel").value;
+
+            fetch('https://github.charlieroder.io/run-python', {
                 method: 'POST',
-                body: new URLSearchParams({ 'input_data': {"experience": experience, "project_type": projectType} }),
+                body: JSON.stringify({ input: inputData }),
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/json'
                 }
             })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
-                document.getElementById('output').innerHTML = data;
-            });
-        });
+                document.getElementById("output").innerText = data.output;
+            })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
 </body>
 </html>
