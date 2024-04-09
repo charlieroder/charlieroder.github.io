@@ -96,16 +96,19 @@
     <p id = 'input_parameters'></p>
     <p id = 'output'></p>
     <py-script>
-        
+        import Math
+
         def sub(*args,**kwargs):
             result_place = Element('input_parameters')
             result_place2 = Element('output')
+
+            x = Math.sqrt(9)
 
             experience = Element('experienceLevel').value
             project_type = Element('projectType').value
             
             result_place.write(f"Result with {experience} experience level and {project_type} project type...")
-            result_place2.write("COMING SOON")
+            result_place2.write(x)
     </py-script>
 
 </body>
