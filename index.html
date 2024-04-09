@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Options</title>
-    <style>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+</head>
+
+<style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -38,93 +44,69 @@
             box-sizing: border-box;
         }
 
-        button {
+        input {
             margin-top: 10px;
             padding: 10px;
             border: 2px solid;
             border-radius: 5px;
             width: 25%;
         }
-
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Select Project Parameters</h1>
 
-        <h3>Experience Level</h3>
+<body>
+
+    <h1>Project Options</h1>
+
+    <br />
+    
+    <form onsubmit="return false">
+        <label for="experienceLevel">Experience Level:</label><br>
         <select id="experienceLevel">
             <option value="">-- Select an option --</option>
-            <option value="none">No coding experience</option>
-            <option value="beginner">Beginner</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="advanced">Advanced</option>
+            <option value="No coding experience">No coding experience</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
         </select>
+    </br>
+        <label for="projectType">Project Type:</label><br>
 
-        <h3>Project Type</h3>
-        <select id="projectType">
+        <select name="projectType" id="projectType">
             <option value="">-- Select an option --</option>
-            <option value="media">Media</option>
-            <option value="education">Education Technology</option>
-            <option value="ecommerce">E-commerce</option>
-            <option value="search_engine">Search Engine</option>
-            <option value="productivity_tools">Productivity Tools</option>
-            <option value="delivery_rideshare">Delivery / Rideshare</option>
-            <option value="financial_services">Financial Services / Banking</option>
-            <option value="web_development">Web Development</option>
-            <option value="gaming">Gaming</option>
-            <option value="management">Management Tools</option>
-            <option value="tech_services">Technology Services</option>
-            <option value="web_development">Web Development</option>
-            <option value="marketing">Advertising / Marketing</option>
-            <option value="travel">Travel</option>
-            <option value="other">Other</option>
+            <option id=0 value="media">Media</option>
+            <option value="Education Technology">Education Technology</option>
+            <option value="E-commerce">E-commerce</option>
+            <option value="Search Engine">Search Engine</option>
+            <option value="Productivity Tools">Productivity Tools</option>
+            <option value="Delivery / Rideshare">Delivery / Rideshare</option>
+            <option value="Financial Services / Banking">Financial Services / Banking</option>
+            <option value="Gaming">Gaming</option>
+            <option value="Management Tools">Management Tools</option>
+            <option value="Technology Services">Technology Services</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Advertising / Marketing">Advertising / Marketing</option>
+            <option value="Travel">Travel</option>
+            <option value="Other">Other</option>
         </select>
 
-        <button id="submit">Submit</button>
+        <input pys-onClick="sub" type="submit" id="btn-form" value="submit">
 
-        <button id="run_model" onClick="runPython()">Run Model</button>
-    </div>
+    </form> 
+ 
+    <p id = 'input_parameters'></p>
+    <p id = 'output'></p>
+    <py-script>
+        
+        def sub(*args,**kwargs):
+            result_place = Element('input_parameters')
+            result_place2 = Element('output')
 
-    <div id="output"></div>
+            experience = Element('experienceLevel').value
+            project_type = Element('projectType').value
+            
+            result_place.write(f"Result with {experience} experience level and {project_type} project type...")
+            result_place2.write("Example output")
+    </py-script>
 
-    <script>
-        const experience = document.getElementById('experienceLevel');
-        const projectType = document.getElementById('projectType');
-        const submitButton = document.getElementById('submit');
-
-        experience.addEventListener('change', function() {
-            const selectedExperience = experience.value;
-        });
-
-        projectType.addEventListener('change', function() {
-            const selectedProjectType = projectType.value;
-        })
-
-        submitButton.addEventListener('click', function() {
-            const parameters ={
-                experience: experience.value,
-                type: projectType.value
-            }
-            console.log(parameters);
-        })
-
-        function runPython() {
-            var inputData = document.getElementById("experienceLevel").value;
-
-            fetch('https://github.charlieroder.io/run-python', {
-                method: 'POST',
-                body: JSON.stringify({ input: inputData }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("output").innerText = data.output;
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
 </body>
 </html>
