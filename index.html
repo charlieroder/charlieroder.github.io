@@ -9,7 +9,8 @@
 <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
 <py-env>
-    - Math
+    - paths:
+        - ./py_functions.py
 </py-env>
 
 </head>
@@ -100,13 +101,13 @@
     <p id = 'input_parameters'></p>
     <p id = 'output'></p>
     <py-script>
-        import Math
+        import run_model from py_functions as pf
 
-        def sub(*args,**kwargs):
+        def sub(*arg*kwargs):
             result_place = Element('input_parameters')
             result_place2 = Element('output')
 
-            x = Math.sqrt(9)
+            x = pf.run_model()
 
             experience = Element('experienceLevel').value
             project_type = Element('projectType').value
